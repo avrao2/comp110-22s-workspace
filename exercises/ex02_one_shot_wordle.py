@@ -6,12 +6,14 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 secret_word: str = "python"
-guess: str = input("What is your 6-letter guess? ")
+guess: str = input(f"What is your { len(secret_word) }-letter guess? ")
 index: int = 0
 emoji: str = ""
+while len(guess) > len(secret_word) or len(guess) < len(secret_word):
+    guess = input(f"That was not { len(secret_word) } letters! Try again: ")
 while index < len(secret_word):
     if guess[index] == secret_word[index]:
-        emoji += GREEN_BOX
+        emoji += GREEN_BOX   # if letter is in the right place
     else: 
         character_exists: bool = False
         check_index: int = 0
@@ -21,11 +23,11 @@ while index < len(secret_word):
             else:
                 check_index += 1 
         if character_exists is True: 
-            emoji += YELLOW_BOX
+            emoji += YELLOW_BOX   # if letter is in the word but at a different index
         else:
-            emoji += WHITE_BOX
+            emoji += WHITE_BOX   # if letter is not in the word
     index = index + 1 
-print(emoji)
+print(emoji) 
 
 
 if len(guess) == len(secret_word):
