@@ -35,7 +35,3 @@ else:
     else: 
         if count >= 2:
             print(str(count) + " instances of " + character + " found in " + word)
-
-
-
-
