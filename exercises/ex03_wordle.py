@@ -48,7 +48,7 @@ def main() -> None:
     secret_word: str = "codes"
     turns: int = 1
     win: bool = False
-    while turns < 6 and win is not True:   # if the user still has turns left and has not guessed the word yet, then the loop will continue to run
+    while turns <= 6 and win is not True:   # if the user still has turns left and has not guessed the word yet, then the loop will continue to run
         print(f"=== Turn {turns}/6 ===")
         user_guess: str = input_guess(5)
         print(emojified(user_guess, "codes"))
@@ -58,22 +58,9 @@ def main() -> None:
             turns += 1
     if win is True:   # the user has won the game
         print(f"You won in {turns}/6 turns!")
-    else:   # the user has used up all of their turns but has not guessed the secret word
+    elif turns > 6 and win is not True:   # the user has used up all of their turns but has not guessed the secret word
         print("X/6 - Sorry, try again tomorrow!") 
     
 
 if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
-
-
-
-
+    main() 
