@@ -19,7 +19,7 @@ def sub(xs: list[int], start_i: int, end_i: int) -> list[int]:
     if start_i < 0: 
         i = 0
     if end_i > len(xs):
-        end_i = len(xs) - 1
+        end_i = len(xs) 
     if len(xs) == 0 | start_i > len(xs) | end_i <= 0: 
         return subset
     while i < end_i and i >= start_i: 

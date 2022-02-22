@@ -32,13 +32,13 @@ def test_sub_empty() -> None:
 
 
 def test_sub_many_items() -> None: 
-    """Tests the sub function when the list has multiple items."""
+    """Tests the sub function when the list has multiple items and the end index is greater than the length of the list."""
     xs: list[int] = [1, 2, 3, 4, 5]
-    assert sub(xs, 0, 8) == [1, 2, 3, 4]
+    assert sub(xs, 0, 8) == [1, 2, 3, 4, 5]
 
 
 def test_sub_many_items_again() -> None: 
-    """Tests the sub function when the list has multiple items."""
+    """Tests the sub function when the list has multiple items and the start index is negative."""
     xs: list[int] = [0, 2, 4, 6, 8]
     assert sub(xs, -2, 2) == [0, 2]
 
